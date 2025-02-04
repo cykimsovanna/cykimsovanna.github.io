@@ -1,0 +1,8 @@
+---
+title: "IM Assignment 1"
+format: html
+---
+
+# Information Management Assignment 1
+
+This is the first assignment for the Information Management course. Provide a summary, your analysis, and findings here.

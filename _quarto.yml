@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "cykimsovanna.github.io"
+  navbar: 
+    right: 
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: cv.pdf
+        text: CV
+      - text: Research & Projects
+        menu:
+          - text: University Work
+            href: university_work.qmd
+
+
+format:
+  html:
+    theme:
+      - flatly
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual

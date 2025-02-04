@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to My Website\nThis is the homepage of my website."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About Me\nHello, I am a student at the University of Texas at Dallas."
+  },
+  {
+    "objectID": "university_work.html",
+    "href": "university_work.html",
+    "title": "University Work",
+    "section": "",
+    "text": "Assignment 1\nProject Proposal\n\n\n\n\n\nAssignment 1"
+  },
+  {
+    "objectID": "university_work.html#ms-social-data-analytics-research",
+    "href": "university_work.html#ms-social-data-analytics-research",
+    "title": "University Work",
+    "section": "",
+    "text": "Assignment 1\nProject Proposal\n\n\n\n\n\nAssignment 1"
+  },
+  {
+    "objectID": "KM_assignment1.html",
+    "href": "KM_assignment1.html",
+    "title": "Knowledge Mining Assignment 1",
+    "section": "",
+    "text": "Reviewing Breiman’s Statistical Modeling: The Two Cultures and Shmueli’s To Explain or to Predict?\nLeo Breiman’s article talks about the two cultures, namely data (stochastic) models and algorithmic (machine learning) models, while Galit Shmueli’s focuses on explanatory and predictive modeling. The two articles follow very similar arguments in that mainstream academia relies too heavily on data models and/or explanatory modeling, which put more emphasis on inference of data. The problem is that people often use such method for prediction as well, which leads to many wrong conclusions. Both authors want to highlight the importance of algorithmic models and/or predictive modeling as they are crucial for making conclusions about the foreseeable future.\nThe main difference between the two is that Breiman strongly advocates for algorithmic models over the traditional data models because he thinks that the latter only leads to irrelevant theory and poor predictive accuracy, whereas Schmueli wants to emphasize the distinction between explanatory and predictive modeling as they serve two different purposes. She does not necessarily believe explanatory modeling is inferior to the other one—it is simply that while it is good in testing hypothesis and understanding causal relationships about past events, it is not useful when trying to generalize future events."
+  },
+  {
+    "objectID": "IM_assignment1.html",
+    "href": "IM_assignment1.html",
+    "title": "IM Assignment 1",
+    "section": "",
+    "text": "Information Management Assignment 1\nThis is the first assignment for the Information Management course. Provide a summary, your analysis, and findings here."
+  },
+  {
+    "objectID": "index.html#projects-and-research",
+    "href": "index.html#projects-and-research",
+    "title": "Home",
+    "section": "",
+    "text": "Here is a quick overview of my work and research at university."
+  },
+  {
+    "objectID": "KM_projectproposal.html",
+    "href": "KM_projectproposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "Brainstorming Ideas\n\n1. Will AI affect future employment rates?\n\nData collection:\nMethods:\nStarting data project:\n\n\n\n2. Will tariffs affect stock market performance?\n\nData collection:\nMethods:\nStarting data project:"
+  }
+]

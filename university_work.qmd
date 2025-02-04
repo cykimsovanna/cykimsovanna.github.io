@@ -1,0 +1,15 @@
+---
+title: "University Work"
+format: html
+---
+
+## MS Social Data Analytics & Research
+
+### ECON 6323 - Knowledge Mining
+
+-   [Assignment 1](KM_assignment1.qmd)
+-   [Project Proposal](KM_projectproposal.qmd)
+
+### ECON 6354 - Information Management
+
+-   [Assignment 1](IM_assignment1.qmd)
