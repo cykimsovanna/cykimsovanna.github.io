@@ -3,7 +3,7 @@ title: "Knowledge Mining Assignment 1"
 format: html
 ---
 
-### Reviewing Breiman's *Statistical Modeling: The Two Cultures* and Shmueli's *To Explain or to Predict?* 
+### Reviewing Breiman's *Statistical Modeling: The Two Cultures* and Shmueli's *To Explain or to Predict?*
 
 Leo Breiman's article talks about the two cultures, namely data (stochastic) models and algorithmic (machine learning) models, while Galit Shmueli's focuses on explanatory and predictive modeling. The two articles follow very similar arguments in that mainstream academia relies too heavily on data models and/or explanatory modeling, which put more emphasis on inference of data. The problem is that people often use such method for prediction as well, which leads to many wrong conclusions. Both authors want to highlight the importance of algorithmic models and/or predictive modeling as they are crucial for making conclusions about the foreseeable future.
 
@@ -13,7 +13,7 @@ The main difference between the two is that Breiman strongly advocates for algor
 
 #### 1. Will AI affect future employment rates?
 
--   Data collection: I can look at FRED databases, as well as other research papers that have dealt with this topic. 
+-   Data collection: I can look at FRED databases, as well as other research papers that have dealt with this topic.
 -   Methods: I can use a regression analysis or time series analysis.
 -   Starting data project: I will first look up the data, and then regress and plot them to predict the trend of whether or not AI will increase unemployment rates in certain sectors of industry.
 

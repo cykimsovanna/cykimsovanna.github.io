@@ -1,8 +1,52 @@
 ---
-title: "IM Assignment 1"
+title: "Information Management Assignment 1"
 format: html
 ---
 
-# Information Management Assignment 1
+### 1. Applications I have used that employ a database system:
 
-This is the first assignment for the Information Management course. Provide a summary, your analysis, and findings here.
+-   UTD eLearning (Blackboard) – It stores all the materials that are needed for each course that I enroll in and also allows me to submit quizzes and other assignments through it, which would then be accessed and reviewed by my professors.
+
+-   eBay – In addition to listing all the products that we can buy by just typing the names of those goods or by filtering by certain categories, it also stores our purchase history and other feedback on such products.
+
+-   Google Drive – It stores files and other user data that we upload onto it. Similarly to how file explorer functions, Google Drive allows us to sort out files by category, date modified, name, etc. and also create folders where we can rearrange those files' location.
+
+### 2. Applications in domain projects:
+
+-   News compiler
+
+    -   Purpose – allows users to easily find the news articles they want to read and understand the sources where they come from
+
+    -   Functions – compiles all news articles and sorts them by their topics, place of origin, date, as well as perspective; uses AI to determine if the news article is biased towards any political ideology; allows users to see the backgrounds and perspectives of the authors
+
+    -   Simple interface design – homepage with trending news stories; search-bar where we can look up specific type of news; bias rating for each article
+
+-   Price tracker
+
+    -   Purpose – allows users to track any price change of goods and services across different places, from online shops to neighborhood grocery stores
+
+    -   Functions – collects real-time pricing data of various products that are sold via online or physical stores; displays historical prices to allow people to see the trends and do comparisons
+
+    -   Simple interface design – works similarly to eBay and Amazon but contains a sidebar that allows us to see the price changes of specific products and their costs sold at other places
+
+-   History archive
+
+    -   Purpose – makes it accessible to everyone to view any historical sources (literature, art, etc.) of any country or region
+
+    -   Functions – compiles all historical sources and sorts them out by location, period, author and genre; gives contexts about each piece of historical record, as well as translations into different languages
+
+    -   Simple interface design – webpages containing detailed explanation and related pictures for each historical document; bookmark and annotation features that allow users to take notes in case they want to do research and this is fully customisable and personalized
+
+### 3. Why is data mining needed?
+
+Even though data can be retrieved efficiently and effectively, data mining is still needed, because to simply put, it is how we process such data to put into use for various purposes, like research and report. We still have to analyze the data, find any pattern or trend, predict future outcomes, and make insights. In other words, while modern database systems allow us to easily get information, data mining is another step of what we do with that information.
+
+### 6. Tables that are used to store information in a social network
+
+-   User profile table – contains the user ID, username, bio, email, password, as well as profile picture
+
+-   Posts table – contains the post ID, content of the post (texts, audio or video), number of likes and comments, and links that are attached
+
+-   Comments table – contains the ID, texts, authors' username, time-stamp of creation, and other replies
+
+-   Group/Community table – contains group name and ID, description and type, creation date, member count, list of moderators that have access to manage the group, types of posts (video, picture, essay, etc.)

@@ -1,6 +1,0 @@
----
-title: "Project Proposal"
-format: html
----
-
-

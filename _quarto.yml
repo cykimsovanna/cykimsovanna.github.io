@@ -13,8 +13,8 @@ website:
         text: CV
       - text: Research & Projects
         menu:
-          - text: University Work
-            href: university_work.qmd
+          - text: UT Dallas
+            href: UT_Dallas.qmd
 
 
 format:

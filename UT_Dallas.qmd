@@ -1,0 +1,20 @@
+---
+title: "University of Texas at Dallas"
+format: html
+---
+
+## MS Social Data Analytics & Research
+
+### ECON 6323 - Knowledge Mining
+
+-   [Assignment 1](KM_assignment1.qmd)
+-   [Assignment 2](KM_assignment2.qmd)
+-   [Knowledge Mining Project Proposal](KMProjectProposal_PPT.pdf)
+-   [Class 4 Discussion](KM4_MiningScientificPapers.pdf)
+
+### ECON 6354 - Information Management
+
+-   [Assignment 1](IM_assignment1.qmd)
+-   [Assignment 2](IM_assignment2.qmd)
+-   [Assignment 3](IM_assignment3.qmd)
+-   [Database Project Proposal](IMProjectProposal_PPT.pdf)  
