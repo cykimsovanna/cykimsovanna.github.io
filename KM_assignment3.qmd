@@ -1,0 +1,72 @@
+---
+title: "Knowledge Mining Assignment 3"
+format: html
+---
+
+### Step 1. Creating Initial Prompt
+
+-   I will be using ChatGPT, Grok and Copilot. The following is the prompt for this test.
+
+    *Conduct a 2,000-word structured systematic literature review on how data mining and machine learning are applied in real-world domains. Include a methodology section, synthesize key findings, identify trends and gaps, and propose one testable hypothesis. Use an academic tone and emulate systematic review standards.*
+
+-   Here are the responses from [ChatGPT](KM_assignment3_chatgpt1.qmd), [Grok](KM_assignment3_grok1.qmd) and [Copilot](KM_assignment3_copilot1.qmd).
+
+### Step 2. Analyzing Model Responses
+
+-   For ChatGPT:
+
+    -   There is a methodology section, which includes research questions, search criteria and data collection.
+
+    -   The findings are rather concise as ChatGPT just lists various applications for each domain in bullet points without explaining them more deeply.
+
+    -   It does identify trends and research gaps, but they are very generic in response.
+
+    -   It only gives a hypothesis talking how predictive models can improve clinicians' trust and adoption rates, which may be testable, although it focuses only on one domain.
+
+    -   It does not provide any citation.
+
+-   For Grok:
+
+    -   Similar to ChatGPT's, the methodology section here includes everything, as well as the inclusion/exclusion criteria and study selection.
+
+    -   It explains quite briefly into how machine learning affects different domains with some statistics backed by sources. It also lists the techniques employed and challenges that may arise–overall, a big improvement over ChatGPT.
+
+    -   The trends and gaps are mostly similar to what ChatGPT writes but contains sources.
+
+    -   Surprisingly, Grok chooses to focus on healthcare as well, though it talks more about how data mining can reduce algorithmic bias in healthcare models for underserved populations.
+
+    -   While Grok includes sources, all of them appear to be fake because when I search them up, either they get the authors' name wrong or that they lead to other real articles that have different authors and titles, albeit similar topics. This makes it harder to believe any of the statistics it used.
+
+-   For Copilot:
+
+    -   The methodology is very similar to what the other two models have generated.
+
+    -   The findings are the same generic responses that briefly outline how data mining can affect various industries. It does provide sources, but they all hilariously send me to sites talking about how to write a systematic review itself.
+
+    -   The trends and gaps are just summaries in bullet points.
+
+    -   As for the hypothesis, it talks about healthcare as well.
+
+    -   For some reason, some of the sources that are listed at the bottom do link to books that actually talk about machine learning and its real-world applications.
+
+### Step 3. Refining the Prompt
+
+-   Since all of the AI models have similar problems when it comes to listing the relevant sources and giving detailed trends and gaps, here is the revised prompt:
+
+    *Conduct a 2,000-word structured systematic literature review on the topic about how data mining and machine learning are applied in real-world domains. Include a methodology section, synthesize key findings, identify trends and gaps by looking at ongoing news around the world in great detail, and propose one testable hypothesis. Incorporate actual sources that are relevant to the topic. Maintain a rigorous academic tone and emulate systematic review standards.*
+
+-   The new responses are linked here (same pages but scroll down): [ChatGPT](KM_assignment3_chatgpt1.qmd), [Grok](KM_assignment3_grok1.qmd) and [Copilot](KM_assignment3_copilot1.qmd).
+
+-   There are slightly more details into the findings and trends/gaps sections for all three AI responses. ChatGPT's output is somehow cut off mid-way through talking about research gaps, which could be the limit in how much it can generate. However, this time, ChatGPT manages to link to sources that are indeed relevant to the topic. Copilot uses the same sources, but also adds more. Grok, on the other hand, still utilizes the same fake sources. The ones that it has added also suffer from the same problem. Only a couple actually manages to link to actual relevant sites.
+
+### Step 4. Cross-Model Collaboration
+
+-   Despite Grok using odd sources for its citations, it still provides relatively the most detailed response. Here is the new prompt for Grok that asks it to synthesize the results.
+
+    *Using these drafts from ChatGPT, Copilot as well as yours, conduct a 2,000-word structured systematic literature review on the topic about how data mining and machine learning are applied in real-world domains. Combine the strongest methodology, findings, trends, gaps and hypothesis into a cohesive academically sound document. Check if the sources are actually real and then incorporate them into the document with proper links.*
+
+-   Here is the final [result](KM_assignment3_grok1.qmd) (bottom of page).
+
+### Step 5. Reflection
+
+-   Overall, I think Grok does the writing better than the others although its weakness comes from its use of sources. Even with explicit instruction as seen above in the new synthetic prompt, Grok somehow gives links to random articles even though its citations say otherwise. Copilot is probably the best when it comes to listing sources—at least they are accurate and show what they say. ChatGPT performs the worst of all with the least amount of details. When I give it the revised prompt, ChatGPT gives decent sources, but suffers from what is possibly the word limit that it can generate. What I have learned here is that I have to be very explicit in giving each AI model the prompts.

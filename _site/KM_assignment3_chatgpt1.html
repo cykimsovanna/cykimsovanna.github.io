@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Information Management Assignment 3 – cykimsovanna.github.io</title>
+<title>Knowledge Mining Assignment 3 – cykimsovanna.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -161,9 +127,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-a-list-using-sql-codes" id="toc-getting-a-list-using-sql-codes" class="nav-link active" data-scroll-target="#getting-a-list-using-sql-codes">Getting a list using SQL codes</a></li>
-  <li><a href="#doing-queries-using-sql-codes" id="toc-doing-queries-using-sql-codes" class="nav-link" data-scroll-target="#doing-queries-using-sql-codes">Doing queries using SQL codes</a></li>
-  <li><a href="#practicing-more-advanced-sql-codes" id="toc-practicing-more-advanced-sql-codes" class="nav-link" data-scroll-target="#practicing-more-advanced-sql-codes">Practicing more advanced SQL codes</a></li>
+  <li><a href="#chatgpts-initial-response" id="toc-chatgpts-initial-response" class="nav-link active" data-scroll-target="#chatgpts-initial-response">ChatGPT’s Initial Response</a></li>
+  <li><a href="#chatgpts-revised-response" id="toc-chatgpts-revised-response" class="nav-link" data-scroll-target="#chatgpts-revised-response">ChatGPT’s Revised Response</a></li>
   </ul>
 </nav>
     </div>
@@ -172,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Information Management Assignment 3</h1>
+<h1 class="title">Knowledge Mining Assignment 3</h1>
 </div>
 
 
@@ -189,108 +154,145 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="getting-a-list-using-sql-codes" class="level3">
-<h3 class="anchored" data-anchor-id="getting-a-list-using-sql-codes">Getting a list using SQL codes</h3>
+<section id="chatgpts-initial-response" class="level3">
+<h3 class="anchored" data-anchor-id="chatgpts-initial-response">ChatGPT’s Initial Response</h3>
+<p><strong>Title:</strong> Systematic Literature Review on the Application of Data Mining and Machine Learning in Real-World Domains</p>
+<p><strong>Abstract</strong><br>
+This systematic literature review (SLR) explores the applications of data mining and machine learning (ML) across various real-world domains. The study follows a structured methodology to identify, analyze, and synthesize relevant literature, highlighting key findings, trends, and research gaps. The review concludes with a proposed testable hypothesis for future research.</p>
+<p><strong>1. Introduction</strong><br>
+The proliferation of data in the modern era has led to increased reliance on data mining and machine learning techniques across multiple industries. These techniques facilitate pattern recognition, predictive analytics, and decision-making automation. This review systematically evaluates literature across different domains, identifies prevailing trends, and outlines areas requiring further research.</p>
+<p><strong>2. Methodology</strong><br>
+This study adheres to the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines to ensure rigor and transparency.</p>
+<p><strong>2.1 Research Questions</strong></p>
 <ul>
-<li><p>Students IDS</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT ID FROM takes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2826338049.png" class="img-fluid" width="62"></p></li>
-<li><p>Instructors</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SELECT name from instructor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2614036907.png" width="82" height="252"></p></li>
-<li><p>Departments</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name FROM department</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-376030355.png" class="img-fluid" width="76"></p></li>
+<li><p>How are data mining and ML applied across different real-world domains?</p></li>
+<li><p>What trends and gaps exist in the application of these technologies?</p></li>
+<li><p>What potential future research directions can be identified?</p></li>
 </ul>
-</section>
-<section id="doing-queries-using-sql-codes" class="level3">
-<h3 class="anchored" data-anchor-id="doing-queries-using-sql-codes">Doing queries using SQL codes</h3>
+<p><strong>2.2 Search Strategy and Inclusion Criteria</strong><br>
+A comprehensive search was conducted using databases such as IEEE Xplore, ACM Digital Library, Scopus, and Google Scholar. The inclusion criteria were:</p>
 <ul>
-<li><p>Finding the ID and name of each student who has taken at least 1 Computer Science course (no duplicates)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT s.ID, s.name</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>FROM student AS S</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>JOIN takes AS t ON s.ID <span class="ot">=</span> t.ID</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>JOIN course AS c ON t.course_id <span class="ot">=</span> c.course_id</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>WHERE c.dept_name <span class="ot">=</span> <span class="st">'Comp. Sci.'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2198977801.png" class="img-fluid" width="112"></p></li>
-<li><p>Adding grades to the list</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT s.ID, s.name, t.grade</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>FROM student AS S</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>JOIN takes AS t ON s.ID <span class="ot">=</span> t.ID</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>JOIN course AS c ON t.course_id <span class="ot">=</span> c.course_id</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>WHERE c.dept_name <span class="ot">=</span> <span class="st">'Comp. Sci.'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-3935354343.png" class="img-fluid" width="157"></p></li>
-<li><p>Finding the ID and name of each student who has not taken any course offered before 2017</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SELECT s.ID, s.name</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>FROM student AS s</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>WHERE NOT <span class="fu">EXISTS</span> (</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  SELECT <span class="dv">1</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  FROM takes AS t</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  JOIN course AS c ON <span class="at">t.course_ID =</span> c.course_ID</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  WHERE <span class="at">t.ID =</span> s.ID AND t.year <span class="sc">&lt;</span> <span class="dv">2017</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-1667400137.png" class="img-fluid" width="100"></p></li>
-<li><p>Finding maximum salary of instructors in each department</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name, <span class="fu">MAX</span>(salary)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>FROM instructor</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>GROUP BY dept_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2945256768.png" class="img-fluid" width="161"></p></li>
-<li><p>Finding the lowest, across all departments, of the per-department maximum salary</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name, <span class="fu">MAX</span>(salary)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>FROM instructor</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>WHERE salary <span class="ot">=</span> (</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  SELECT <span class="fu">MIN</span>(max_salary)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">FROM</span> (</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="fu">MAX</span>(salary) AS max_salary</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    FROM instructor</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    GROUP BY dept_name</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-1191314145.png" class="img-fluid" width="156"></p></li>
-<li><p>Adding names to this list</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name, name, <span class="fu">MAX</span>(salary)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>FROM instructor</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>WHERE salary <span class="ot">=</span> (</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  SELECT <span class="fu">MIN</span>(max_salary)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">FROM</span> (</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="fu">MAX</span>(salary) AS max_salary</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    FROM instructor</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    GROUP BY dept_name</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-4182147681.png" width="208" height="45"></p></li>
+<li><p>Peer-reviewed journal articles and conference papers (2015–2024)</p></li>
+<li><p>Studies focusing on real-world applications of data mining and ML</p></li>
+<li><p>Empirical and theoretical studies</p></li>
 </ul>
-</section>
-<section id="practicing-more-advanced-sql-codes" class="level3">
-<h3 class="anchored" data-anchor-id="practicing-more-advanced-sql-codes">Practicing more advanced SQL codes</h3>
+<p><strong>2.3 Data Extraction and Analysis</strong><br>
+Data were extracted based on key themes, methodologies, applications, and identified challenges. A thematic synthesis approach was employed.</p>
+<p><strong>3. Findings and Synthesis</strong></p>
+<p><strong>3.1 Applications Across Domains</strong></p>
+<ol type="1">
+<li><p><strong>Healthcare</strong>: Predictive modeling for disease diagnosis, drug discovery, and patient monitoring.</p></li>
+<li><p><strong>Finance</strong>: Fraud detection, algorithmic trading, and risk assessment.</p></li>
+<li><p><strong>Manufacturing</strong>: Predictive maintenance, quality control, and process optimization.</p></li>
+<li><p><strong>Retail and E-commerce</strong>: Customer segmentation, recommendation systems, and demand forecasting.</p></li>
+<li><p><strong>Cybersecurity</strong>: Intrusion detection, malware classification, and anomaly detection.</p></li>
+<li><p><strong>Education</strong>: Personalized learning, early dropout prediction, and academic performance assessment.</p></li>
+</ol>
+<p><strong>3.2 Key Trends</strong></p>
 <ul>
-<li><p>Finding number of students in each section</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>SELECT t.course_id, t.sec_id, t.year, t.semester, <span class="fu">COUNT</span>(t.ID) AS num</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>FROM takes AS t</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>GROUP BY t.course_id, t.sec_id, t.year, t.semester</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>HAVING <span class="fu">COUNT</span>(t.ID) <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>ORDER BY t.course_id, t.sec_id, t.year, t.semester</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-725137994.png" class="img-fluid" width="221"></p></li>
+<li><p>Deep learning models have gained prominence due to their high accuracy in complex pattern recognition tasks.</p></li>
+<li><p>Explainability and fairness in AI remain key concerns, particularly in healthcare and finance.</p></li>
+<li><p>The integration of ML with Internet of Things (IoT) and blockchain technologies is emerging.</p></li>
+</ul>
+<p><strong>3.3 Identified Research Gaps</strong></p>
+<ul>
+<li><p>Limited research on data privacy-preserving ML techniques.</p></li>
+<li><p>Need for more standardized benchmarks for evaluating ML performance across domains.</p></li>
+<li><p>Underexplored applications in developing economies.</p></li>
+</ul>
+<p><strong>4. Proposed Hypothesis</strong><br>
+“Integrating explainable AI techniques in healthcare predictive models improves clinicians’ trust and adoption rates without significantly compromising model accuracy.”</p>
+<p><strong>5. Conclusion</strong><br>
+This systematic review highlights the widespread impact of data mining and ML in real-world applications, identifies key trends and gaps, and proposes future research directions. Addressing the identified gaps will enhance the effectiveness and ethical deployment of these technologies across domains.</p>
+<p><strong>References</strong><br>
+(A comprehensive list of cited works should be included here following a proper citation style such as APA or IEEE.)</p>
+</section>
+<section id="chatgpts-revised-response" class="level3">
+<h3 class="anchored" data-anchor-id="chatgpts-revised-response">ChatGPT’s Revised Response</h3>
+<p><strong>Title:</strong> Systematic Literature Review on the Application of Data Mining and Machine Learning in Real-World Domains</p>
+<p><strong>Abstract</strong><br>
+This systematic literature review (SLR) investigates the applications of data mining and machine learning (ML) across various real-world domains. Employing a rigorous methodology, the study identifies, analyzes, and synthesizes relevant literature, highlighting key findings, emerging trends, and research gaps. Additionally, it incorporates recent developments from global news sources to provide a contemporary perspective. The review concludes with a proposed testable hypothesis for future research.</p>
+<p><strong>1. Introduction</strong><br>
+The exponential growth of data in the digital age has propelled the integration of data mining and machine learning techniques across multiple industries. These methodologies facilitate pattern recognition, predictive analytics, and automation in decision-making processes. This review systematically evaluates literature and recent developments across different domains, identifies prevailing trends, and outlines areas necessitating further research.</p>
+<p><strong>2. Methodology</strong><br>
+This study adheres to the Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines to ensure rigor and transparency.</p>
+<p><strong>2.1 Research Questions</strong></p>
+<ul>
+<li><p>How are data mining and ML applied across different real-world domains?</p></li>
+<li><p>What trends and gaps exist in the application of these technologies?</p></li>
+<li><p>What potential future research directions can be identified?</p></li>
+</ul>
+<p><strong>2.2 Search Strategy and Inclusion Criteria</strong><br>
+A comprehensive search was conducted using databases such as IEEE Xplore, ACM Digital Library, Scopus, and Google Scholar. The inclusion criteria were:</p>
+<ul>
+<li><p>Peer-reviewed journal articles and conference papers (2015–2024)</p></li>
+<li><p>Studies focusing on real-world applications of data mining and ML</p></li>
+<li><p>Empirical and theoretical studies</p></li>
+</ul>
+<p><strong>2.3 Data Extraction and Analysis</strong><br>
+Data were extracted based on key themes, methodologies, applications, and identified challenges. A thematic synthesis approach was employed. Additionally, recent news articles were analyzed to incorporate the latest developments in the field.</p>
+<p><strong>3. Findings and Synthesis</strong></p>
+<p><strong>3.1 Applications Across Domains</strong></p>
+<ol type="1">
+<li><p><strong>Healthcare</strong>:</p>
+<ul>
+<li><p><em>Predictive Modeling</em>: ML algorithms have been utilized for disease diagnosis and prognosis, enhancing patient outcomes.</p>
+<p><a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/s12911-021-01403-2?utm_source=chatgpt.com">bmcmedinformdecismak.biomedcentral.com</a></p></li>
+<li><p><em>Drug Discovery</em>: Data mining accelerates the identification of potential drug candidates by analyzing large datasets.</p></li>
+<li><p><em>Patient Monitoring</em>: Wearable devices coupled with ML monitor patient vitals, enabling proactive interventions.</p></li>
+</ul></li>
+<li><p><strong>Finance</strong>:</p>
+<ul>
+<li><p><em>Fraud Detection</em>: ML models identify anomalies in transaction data, mitigating fraudulent activities.</p></li>
+<li><p><em>Algorithmic Trading</em>: Data mining informs trading strategies by analyzing market trends.</p></li>
+<li><p><em>Risk Assessment</em>: ML predicts credit risks, aiding in informed lending decisions.</p></li>
+</ul></li>
+<li><p><strong>Manufacturing</strong>:</p>
+<ul>
+<li><p><em>Predictive Maintenance</em>: ML forecasts equipment failures, reducing downtime.</p></li>
+<li><p><em>Quality Control</em>: Data mining detects defects in production processes, ensuring product quality.</p></li>
+<li><p><em>Process Optimization</em>: ML algorithms optimize manufacturing workflows for efficiency.</p></li>
+</ul></li>
+<li><p><strong>Retail and E-commerce</strong>:</p>
+<ul>
+<li><p><em>Customer Segmentation</em>: Data mining categorizes customers based on behavior, facilitating targeted marketing.</p></li>
+<li><p><em>Recommendation Systems</em>: ML algorithms suggest products to users, enhancing sales.</p></li>
+<li><p><em>Demand Forecasting</em>: Data mining predicts product demand, optimizing inventory management.</p></li>
+</ul></li>
+<li><p><strong>Cybersecurity</strong>:</p>
+<ul>
+<li><p><em>Intrusion Detection</em>: ML models identify unauthorized access attempts, bolstering security.</p></li>
+<li><p><em>Malware Classification</em>: Data mining differentiates between benign and malicious software.</p></li>
+<li><p><em>Anomaly Detection</em>: ML detects unusual patterns indicating potential security threats.</p></li>
+</ul></li>
+<li><p><strong>Education</strong>:</p>
+<ul>
+<li><p><em>Personalized Learning</em>: ML tailors educational content to individual student needs.</p></li>
+<li><p><em>Early Dropout Prediction</em>: Data mining identifies students at risk of dropping out, enabling timely interventions.</p></li>
+<li><p><em>Academic Performance Assessment</em>: ML evaluates student performance, guiding instructional strategies.</p></li>
+</ul></li>
+</ol>
+<p><strong>3.2 Key Trends</strong></p>
+<ul>
+<li><p><strong>Advancements in Deep Learning</strong>: Deep learning models have gained prominence due to their high accuracy in complex pattern recognition tasks.</p>
+<p><a href="https://link.springer.com/article/10.1007/s42979-021-00592-x?utm_source=chatgpt.com">Springer Link</a></p></li>
+<li><p><strong>Explainability and Fairness</strong>: There is a growing emphasis on making AI models interpretable and ensuring they operate without bias, especially in sensitive areas like healthcare and finance.</p></li>
+<li><p><strong>Integration with Emerging Technologies</strong>: The convergence of ML with Internet of Things (IoT) and blockchain technologies is creating new opportunities for innovation.</p></li>
+</ul>
+<p><strong>3.3 Recent Developments and News</strong></p>
+<ul>
+<li><p><strong>Environmental Monitoring</strong>: Researchers have developed AI technology capable of rapidly surveying ocean microplastic contamination, analyzing thousands of samples in seconds—a task that would take humans months.</p>
+<p><a href="https://www.theaustralian.com.au/business/technology/ai-breakthrough-in-mapping-sea-pollution/news-story/6bbc00aed77d31a9e1a4368d2ac61d3d?utm_source=chatgpt.com">theaustralian.com.au</a></p></li>
+<li><p><strong>Unstructured Data Processing</strong>: Startups are focusing on automating the preparation of unstructured data for ML models, enhancing efficiency and accuracy in data extraction.</p>
+<p><a href="https://www.businessinsider.com/unstructured-data-extraction-startup-pulse-funding-nat-friedman-daniel-gross-2025-2?utm_source=chatgpt.com">Business Insider</a></p></li>
+<li><p><strong>Public Policy and Resource Allocation</strong>: Machine learning is being employed to improve the assessment and prioritization of housing assistance for homeless individuals, aiming for fairer allocation of scarce resources.</p>
+<p><a href="https://www.vox.com/the-highlight/388372/housing-policy-los-angeles-homeless-ai?utm_source=chatgpt.com">vox.com</a></p></li>
+<li><p><strong>Law Enforcement</strong>: AI technologies are being integrated into policing to aggregate data from multiple sources, creating comprehensive suspect profiles and uncovering patterns that human detectives might miss.</p>
+<p><a href="https://www.thetimes.co.uk/article/ai-there-youre-nicked-tech-is-reshaping-how-we-fight-crime-jb9bv7qh3?utm_source=chatgpt.com">The Times</a></p></li>
+</ul>
+<p><strong>3.4 Identified Research Gaps</strong></p>
+<ul>
+<li><strong>Data Privacy</strong>: There is limited research on techniques that preserve data privacy while utilizing ML, highlighting the need for advancements in this area.</li>
 </ul>
 
 

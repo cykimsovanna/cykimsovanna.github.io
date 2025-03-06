@@ -1,0 +1,85 @@
+---
+title: "Information Management Assignment 5"
+format: html
+---
+
+### 1. An E-R diagram can be viewed as a graph. What do the following mean in terms of the structure of an enterprise schema?
+
+-   When the graph is *disconnected*, it means that some entities don't have any relationship with others so they remain isolated–though still in the same schema.
+
+-   When the graph has a *cycle*, it means that there are some redundant relationships that create loops between the entities.
+
+### 3. Why do we have weak entity sets when we can convert any weak entity set to a strong entity set by simply adding appropriate attributes?
+
+-   Weak entity sets still exist because if we only have strong entity sets, then the data can become redundant and potentially more complicated to organize, especially when some relationships are dependent upon another.
+
+### 4. Practicing SQL
+
+-   Based on the following employee database:
+
+    *employee([ID]{.underline}, person_name, street, city)*
+
+    *works([ID]{.underline}, company_name, salary)*
+
+    *company([company_name]{.underline}, city)*
+
+    *manages([ID]{.underline}, manager_id)*
+
+    -   Find ID and name of each employee who lives in the same city as the location of the company for which the employee works
+
+        ```{r, eval=FALSE}
+        select e.ID, e.person_name
+        from employee as e
+        join works as w on e.ID = w.ID
+        join company as c on w.company_name = c.company_name
+        where e.city = c.city
+        ```
+
+    -   Find ID and name of each employee who lives in the same city and on the same street as does their manager
+
+        ```{r, eval=FALSE}
+        select e.ID, e.person_name
+        from employee as e
+        join manages as m on e.ID = m.ID
+        join employee as em on m.manager_id = em.ID
+        where e.city = em.city and e.street = em.street
+        ```
+
+    -   Find ID and name of each employee who earns more than the average salary of all employees of their company
+
+        ```{r, eval=FALSE}
+        select e.ID, e.person_name
+        from employee as e
+        join works as w on e.ID = w.ID
+        where w.salary > (
+          select avg(w_avg.salary)
+          from works as w_avg
+          where w.company_name = w_avg.company_name
+        )
+        ```
+
+-   What is wrong with the following SQL query?
+
+    ```{r, eval=FALSE}
+    select name, title
+    from instructor natural join teaches natural join section natural join course
+    where semester = 'Spring' and year = 2017
+    ```
+
+    That SQL query yields the following result:
+
+    ![](images/clipboard-1436096102.png){width="194"}
+
+    This shows a repeat of one of the rows. After doing some more research, I found out that this is due to that 'Game Design' course having two sections.
+
+    ![](images/clipboard-339430118.png){width="667" height="65"}
+
+    When I simply take out the clause `natural join section`, it yields the same table as the original query's. To avoid this issue, I just need to add `distinct`, as follows:
+
+    ```{r, eval=FALSE}
+    select distinct name, title
+    from instructor natural join teaches natural join course
+    where semester = 'Spring' and year = 2017
+    ```
+
+    ![](images/clipboard-1654608371.png){width="197"}

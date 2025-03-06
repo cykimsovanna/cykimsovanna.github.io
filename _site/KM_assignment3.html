@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Information Management Assignment 3 – cykimsovanna.github.io</title>
+<title>Knowledge Mining Assignment 3 – cykimsovanna.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -161,9 +127,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-a-list-using-sql-codes" id="toc-getting-a-list-using-sql-codes" class="nav-link active" data-scroll-target="#getting-a-list-using-sql-codes">Getting a list using SQL codes</a></li>
-  <li><a href="#doing-queries-using-sql-codes" id="toc-doing-queries-using-sql-codes" class="nav-link" data-scroll-target="#doing-queries-using-sql-codes">Doing queries using SQL codes</a></li>
-  <li><a href="#practicing-more-advanced-sql-codes" id="toc-practicing-more-advanced-sql-codes" class="nav-link" data-scroll-target="#practicing-more-advanced-sql-codes">Practicing more advanced SQL codes</a></li>
+  <li><a href="#step-1.-creating-initial-prompt" id="toc-step-1.-creating-initial-prompt" class="nav-link active" data-scroll-target="#step-1.-creating-initial-prompt">Step 1. Creating Initial Prompt</a></li>
+  <li><a href="#step-2.-analyzing-model-responses" id="toc-step-2.-analyzing-model-responses" class="nav-link" data-scroll-target="#step-2.-analyzing-model-responses">Step 2. Analyzing Model Responses</a></li>
+  <li><a href="#step-3.-refining-the-prompt" id="toc-step-3.-refining-the-prompt" class="nav-link" data-scroll-target="#step-3.-refining-the-prompt">Step 3. Refining the Prompt</a></li>
+  <li><a href="#step-4.-cross-model-collaboration" id="toc-step-4.-cross-model-collaboration" class="nav-link" data-scroll-target="#step-4.-cross-model-collaboration">Step 4. Cross-Model Collaboration</a></li>
+  <li><a href="#step-5.-reflection" id="toc-step-5.-reflection" class="nav-link" data-scroll-target="#step-5.-reflection">Step 5. Reflection</a></li>
   </ul>
 </nav>
     </div>
@@ -172,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Information Management Assignment 3</h1>
+<h1 class="title">Knowledge Mining Assignment 3</h1>
 </div>
 
 
@@ -189,108 +157,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="getting-a-list-using-sql-codes" class="level3">
-<h3 class="anchored" data-anchor-id="getting-a-list-using-sql-codes">Getting a list using SQL codes</h3>
+<section id="step-1.-creating-initial-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-creating-initial-prompt">Step 1. Creating Initial Prompt</h3>
 <ul>
-<li><p>Students IDS</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT ID FROM takes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2826338049.png" class="img-fluid" width="62"></p></li>
-<li><p>Instructors</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>SELECT name from instructor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2614036907.png" width="82" height="252"></p></li>
-<li><p>Departments</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name FROM department</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-376030355.png" class="img-fluid" width="76"></p></li>
+<li><p>I will be using ChatGPT, Grok and Copilot. The following is the prompt for this test.</p>
+<p><em>Conduct a 2,000-word structured systematic literature review on how data mining and machine learning are applied in real-world domains. Include a methodology section, synthesize key findings, identify trends and gaps, and propose one testable hypothesis. Use an academic tone and emulate systematic review standards.</em></p></li>
+<li><p>Here are the responses from <a href="./KM_assignment3_chatgpt1.html">ChatGPT</a>, <a href="./KM_assignment3_grok1.html">Grok</a> and <a href="./KM_assignment3_copilot1.html">Copilot</a>.</p></li>
 </ul>
 </section>
-<section id="doing-queries-using-sql-codes" class="level3">
-<h3 class="anchored" data-anchor-id="doing-queries-using-sql-codes">Doing queries using SQL codes</h3>
+<section id="step-2.-analyzing-model-responses" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-analyzing-model-responses">Step 2. Analyzing Model Responses</h3>
 <ul>
-<li><p>Finding the ID and name of each student who has taken at least 1 Computer Science course (no duplicates)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT s.ID, s.name</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>FROM student AS S</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>JOIN takes AS t ON s.ID <span class="ot">=</span> t.ID</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>JOIN course AS c ON t.course_id <span class="ot">=</span> c.course_id</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>WHERE c.dept_name <span class="ot">=</span> <span class="st">'Comp. Sci.'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2198977801.png" class="img-fluid" width="112"></p></li>
-<li><p>Adding grades to the list</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>SELECT DISTINCT s.ID, s.name, t.grade</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>FROM student AS S</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>JOIN takes AS t ON s.ID <span class="ot">=</span> t.ID</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>JOIN course AS c ON t.course_id <span class="ot">=</span> c.course_id</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>WHERE c.dept_name <span class="ot">=</span> <span class="st">'Comp. Sci.'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-3935354343.png" class="img-fluid" width="157"></p></li>
-<li><p>Finding the ID and name of each student who has not taken any course offered before 2017</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SELECT s.ID, s.name</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>FROM student AS s</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>WHERE NOT <span class="fu">EXISTS</span> (</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  SELECT <span class="dv">1</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  FROM takes AS t</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  JOIN course AS c ON <span class="at">t.course_ID =</span> c.course_ID</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  WHERE <span class="at">t.ID =</span> s.ID AND t.year <span class="sc">&lt;</span> <span class="dv">2017</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-1667400137.png" class="img-fluid" width="100"></p></li>
-<li><p>Finding maximum salary of instructors in each department</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name, <span class="fu">MAX</span>(salary)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>FROM instructor</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>GROUP BY dept_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-2945256768.png" class="img-fluid" width="161"></p></li>
-<li><p>Finding the lowest, across all departments, of the per-department maximum salary</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name, <span class="fu">MAX</span>(salary)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>FROM instructor</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>WHERE salary <span class="ot">=</span> (</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  SELECT <span class="fu">MIN</span>(max_salary)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">FROM</span> (</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="fu">MAX</span>(salary) AS max_salary</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    FROM instructor</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    GROUP BY dept_name</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-1191314145.png" class="img-fluid" width="156"></p></li>
-<li><p>Adding names to this list</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>SELECT dept_name, name, <span class="fu">MAX</span>(salary)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>FROM instructor</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>WHERE salary <span class="ot">=</span> (</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  SELECT <span class="fu">MIN</span>(max_salary)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">FROM</span> (</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="fu">MAX</span>(salary) AS max_salary</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    FROM instructor</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    GROUP BY dept_name</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-4182147681.png" width="208" height="45"></p></li>
+<li><p>For ChatGPT:</p>
+<ul>
+<li><p>There is a methodology section, which includes research questions, search criteria and data collection.</p></li>
+<li><p>The findings are rather concise as ChatGPT just lists various applications for each domain in bullet points without explaining them more deeply.</p></li>
+<li><p>It does identify trends and research gaps, but they are very generic in response.</p></li>
+<li><p>It only gives a hypothesis talking how predictive models can improve clinicians’ trust and adoption rates, which may be testable, although it focuses only on one domain.</p></li>
+<li><p>It does not provide any citation.</p></li>
+</ul></li>
+<li><p>For Grok:</p>
+<ul>
+<li><p>Similar to ChatGPT’s, the methodology section here includes everything, as well as the inclusion/exclusion criteria and study selection.</p></li>
+<li><p>It explains quite briefly into how machine learning affects different domains with some statistics backed by sources. It also lists the techniques employed and challenges that may arise–overall, a big improvement over ChatGPT.</p></li>
+<li><p>The trends and gaps are mostly similar to what ChatGPT writes but contains sources.</p></li>
+<li><p>Surprisingly, Grok chooses to focus on healthcare as well, though it talks more about how data mining can reduce algorithmic bias in healthcare models for underserved populations.</p></li>
+<li><p>While Grok includes sources, all of them appear to be fake because when I search them up, either they get the authors’ name wrong or that they lead to other real articles that have different authors and titles, albeit similar topics. This makes it harder to believe any of the statistics it used.</p></li>
+</ul></li>
+<li><p>For Copilot:</p>
+<ul>
+<li><p>The methodology is very similar to what the other two models have generated.</p></li>
+<li><p>The findings are the same generic responses that briefly outline how data mining can affect various industries. It does provide sources, but they all hilariously send me to sites talking about how to write a systematic review itself.</p></li>
+<li><p>The trends and gaps are just summaries in bullet points.</p></li>
+<li><p>As for the hypothesis, it talks about healthcare as well.</p></li>
+<li><p>For some reason, some of the sources that are listed at the bottom do link to books that actually talk about machine learning and its real-world applications.</p></li>
+</ul></li>
 </ul>
 </section>
-<section id="practicing-more-advanced-sql-codes" class="level3">
-<h3 class="anchored" data-anchor-id="practicing-more-advanced-sql-codes">Practicing more advanced SQL codes</h3>
+<section id="step-3.-refining-the-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-refining-the-prompt">Step 3. Refining the Prompt</h3>
 <ul>
-<li><p>Finding number of students in each section</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>SELECT t.course_id, t.sec_id, t.year, t.semester, <span class="fu">COUNT</span>(t.ID) AS num</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>FROM takes AS t</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>GROUP BY t.course_id, t.sec_id, t.year, t.semester</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>HAVING <span class="fu">COUNT</span>(t.ID) <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>ORDER BY t.course_id, t.sec_id, t.year, t.semester</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="images/clipboard-725137994.png" class="img-fluid" width="221"></p></li>
+<li><p>Since all of the AI models have similar problems when it comes to listing the relevant sources and giving detailed trends and gaps, here is the revised prompt:</p>
+<p><em>Conduct a 2,000-word structured systematic literature review on the topic about how data mining and machine learning are applied in real-world domains. Include a methodology section, synthesize key findings, identify trends and gaps by looking at ongoing news around the world in great detail, and propose one testable hypothesis. Incorporate actual sources that are relevant to the topic. Maintain a rigorous academic tone and emulate systematic review standards.</em></p></li>
+<li><p>The new responses are linked here (same pages but scroll down): <a href="./KM_assignment3_chatgpt1.html">ChatGPT</a>, <a href="./KM_assignment3_grok1.html">Grok</a> and <a href="./KM_assignment3_copilot1.html">Copilot</a>.</p></li>
+<li><p>There are slightly more details into the findings and trends/gaps sections for all three AI responses. ChatGPT’s output is somehow cut off mid-way through talking about research gaps, which could be the limit in how much it can generate. However, this time, ChatGPT manages to link to sources that are indeed relevant to the topic. Copilot uses the same sources, but also adds more. Grok, on the other hand, still utilizes the same fake sources. The ones that it has added also suffer from the same problem. Only a couple actually manages to link to actual relevant sites.</p></li>
+</ul>
+</section>
+<section id="step-4.-cross-model-collaboration" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-cross-model-collaboration">Step 4. Cross-Model Collaboration</h3>
+<ul>
+<li><p>Despite Grok using odd sources for its citations, it still provides relatively the most detailed response. Here is the new prompt for Grok that asks it to synthesize the results.</p>
+<p><em>Using these drafts from ChatGPT, Copilot as well as yours, conduct a 2,000-word structured systematic literature review on the topic about how data mining and machine learning are applied in real-world domains. Combine the strongest methodology, findings, trends, gaps and hypothesis into a cohesive academically sound document. Check if the sources are actually real and then incorporate them into the document with proper links.</em></p></li>
+<li><p>Here is the final <a href="./KM_assignment3_grok1.html">result</a> (bottom of page).</p></li>
+</ul>
+</section>
+<section id="step-5.-reflection" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.-reflection">Step 5. Reflection</h3>
+<ul>
+<li>Overall, I think Grok does the writing better than the others although its weakness comes from its use of sources. Even with explicit instruction as seen above in the new synthetic prompt, Grok somehow gives links to random articles even though its citations say otherwise. Copilot is probably the best when it comes to listing sources—at least they are accurate and show what they say. ChatGPT performs the worst of all with the least amount of details. When I give it the revised prompt, ChatGPT gives decent sources, but suffers from what is possibly the word limit that it can generate. What I have learned here is that I have to be very explicit in giving each AI model the prompts.</li>
 </ul>
 
 
