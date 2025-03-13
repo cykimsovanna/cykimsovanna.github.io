@@ -1,0 +1,13 @@
+/* css styles */
+#quarto-sidebar {
+    background-color: #2C3E50; 
+    color: white; /* Optional: Change text color to white */
+}
+
+#quarto-sidebar a {
+    color: white; /* text color for links */
+}
+
+#quarto-sidebar a:hover {
+    color: #BDC3C7; /* text color on hover */
+}
