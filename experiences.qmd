@@ -1,6 +1,0 @@
----
-title: "Experiences"
-format: html
----
-
-Here is my resume.
