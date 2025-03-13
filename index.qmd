@@ -1,0 +1,12 @@
+---
+title: "About Me"
+format: html
+---
+
+Hello, I am Chakrayuddh Kimsovanna.
+
+I am currently a graduate student at the University of Texas at Dallas, pursuing a Master's degree in Social Data Analytics and Research. I previously completed my Bachelor's degree in Economics with a minor in International Political Economy. Additionally, I have earned a post-graduate certification in Data Science and Business Analytics from the University of Texas at Austin.
+
+[My Github Page](https://github.com/cykimsovanna)
+
+[My LinkedIn Page](https://www.linkedin.com/in/chakrayuddh-kimsovanna/)
