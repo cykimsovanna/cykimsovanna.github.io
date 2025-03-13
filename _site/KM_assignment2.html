@@ -74,11 +74,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-f3c2ea88cadbcfb37ba28ffa2c97cfc1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -105,87 +105,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      cykimsovanna.github.io
-      </li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">cykimsovanna.github.io</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.pdf"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research--projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research &amp; Projects</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research--projects">    
+        <li>
+    <a class="dropdown-item" href="./UT_Dallas.html">
+ <span class="dropdown-text">UT Dallas</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">cykimsovanna.github.io</a> 
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./experiences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Experiences</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Research &amp; Projects</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./UT_Dallas_BSE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">B.S. Economics - UT Dallas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./UT_Dallas_MSSDAR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">M.S. Social Data Analytics &amp; Research - UT Dallas</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./UT_Austin_PGDSBA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Post-Graduate Program in Data Science &amp; Business Analytics - UT Austin</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -219,12 +188,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>02/11/2025</p>
 <section id="practicing-basic-r-programming" class="level3">
 <h3 class="anchored" data-anchor-id="practicing-basic-r-programming">1. Practicing Basic R Programming</h3>
 <ul>
-<li><a href="./KM_A2Lab01.html">Lab01</a></li>
-<li><a href="./KM_A2Lab02.html">Lab02</a></li>
+<li><a href="./Lab01.html">Lab01</a></li>
+<li><a href="./Lab02.html">Lab02</a></li>
 </ul>
 </section>
 <section id="running-an-eda-on-taiwan-2016-election" class="level3">
@@ -367,7 +335,8 @@ Levels: KMT DPP NP PFP TSU NPP NA</code></pre>
 </section>
 <section id="exploring-the-relationship-between-tondu-and-other-variables" class="level4">
 <h4 class="anchored" data-anchor-id="exploring-the-relationship-between-tondu-and-other-variables">2.3. Exploring the relationship between <code>Tondu</code> and other variables</h4>
-<p><strong>Finding Correlations</strong></p>
+<section id="finding-correlations" class="level5">
+<h5 class="anchored" data-anchor-id="finding-correlations">Finding Correlations</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(TEDS_2016<span class="sc">$</span>Tondu, TEDS_2016<span class="sc">$</span>age) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -417,7 +386,9 @@ Levels: KMT DPP NP PFP TSU NPP NA</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Regressing <code>Tondu</code></strong></p>
+</section>
+<section id="regressing-tondu" class="level5">
+<h5 class="anchored" data-anchor-id="regressing-tondu">Regressing <code>Tondu</code></h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>lm_tondu <span class="ot">&lt;-</span> <span class="fu">lm</span>(Tondu <span class="sc">~</span> female <span class="sc">+</span> DPP <span class="sc">+</span> age <span class="sc">+</span> income <span class="sc">+</span> edu <span class="sc">+</span> Taiwanese <span class="sc">+</span> Econ_worse, <span class="at">data =</span> TEDS_2016)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_tondu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -449,6 +420,7 @@ Multiple R-squared:  0.163, Adjusted R-squared:  0.1575
 F-statistic: 29.66 on 7 and 1066 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="exploring-the-relationship-between-votesai-and-other-variables" class="level4">
 <h4 class="anchored" data-anchor-id="exploring-the-relationship-between-votesai-and-other-variables">2.4. Exploring the relationship between <code>votesai</code> and other variables</h4>
@@ -513,7 +485,7 @@ Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 </section>
 <section id="generating-frequency-table-and-barchart-of-the-tondu-variable" class="level4">
-<h4 class="anchored" data-anchor-id="generating-frequency-table-and-barchart-of-the-tondu-variable">2.5. Generating frequency table and barchart of the <code>Tondu</code> variable</h4>
+<h4 class="anchored" data-anchor-id="generating-frequency-table-and-barchart-of-the-tondu-variable">2.4. Generating frequency table and barchart of the <code>Tondu</code> variable</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>TEDS_2016<span class="sc">$</span>Tondu<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(TEDS_2016<span class="sc">$</span>Tondu,<span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Unification now”, </span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="st">“Status quo, unif. in future”, “Status quo, decide later"</span>, <span class="st">"Status quo </span></span>
