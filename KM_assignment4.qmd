@@ -1,0 +1,154 @@
+---
+title: "Knowledge Mining Assignment 4"
+format: html
+---
+
+03/25/2025
+
+### Summarizing articles based on Large Language Models (LLMs)
+
+#### *A Survey on Evaluation of Large Language Models* by Zhao et al. (2022)
+
+This article shows that LLMs have become more and more widely used due to their great performance and flexibility in many fields, such as social science, engineering, medical applications, education and recommendation systems. Zhao and coauthors essentially review the LLM evaluation methods, particularly what, where and how to evaluate. They find that LLMs can function very well in text generation, language understanding, arithmetic and logical reasoning, contextual comprehension and other various natural language processing tasks like machine translation and question answering. On the other hand, they also find some key areas where LLMs are lacking, especially when it comes to handling abstract reasoning, understanding complex semantic similarities, processing non-Latin scripts and addressing biases in generated outputs. LLMs can also have a hard time keeping up with real-time information.
+
+#### *A Survey of Large Language Models* by Chang et al. (2024)
+
+The article explores the development of language intelligence in machines by looking at the statistical langauge models (SLMs), neural language models (NLMs), as well as pre-trained language models (PLMs), which all gave rise to the LLMs as we know today. SLMs use models based on Markov property to predict word sequences but can struggle with data sparsity. NLMs utilize neural networks to learn context-dependent word representations to get better accuracy. PLMs improve by being able to train on larger datasets. Now, LLMs adapt all these methods by being able to handle massive amounts of data by learning from unsupervised data.
+
+#### *Recent advances in natural language processing via large pre-trained language models: A survey.* by Min et al. (2023)
+
+The third article mainly focuses on how PLMs are used in NLP, covering three main approaches, such as fine-tuning, prompt-based learning, and turning NLP tasks into text generation problems. Min and coauthors explain that by combining multiple PLMs, we can improve performance across various NLP tasks. The authors then question whether or not PLMs can actually perform well in understanding semantics and memorization, as well as whether they require clear instructions or can just rely on automatically generated prompts.
+
+### Using quanteda to visualize twitter data on the Biden-Xi summit, and US presidential inaugural speeches
+
+```{r}
+library(quanteda)
+library(quanteda.textmodels)
+library(quanteda.textplots)
+library(readr)
+library(ggplot2)
+```
+
+```{r}
+summit <- read_csv("https://raw.githubusercontent.com/datageneration/datamethods/master/textanalytics/summit_11162021.csv")
+View(summit)
+sum_twt = summit$text
+toks = tokens(sum_twt)
+sumtwtdfm <- dfm(toks)
+```
+
+#### Latent Semantic Analysis
+
+```{r}
+sum_lsa <- textmodel_lsa(sumtwtdfm)
+summary(sum_lsa)
+```
+
+```{r}
+tweet_dfm <- tokens(sum_twt, remove_punct = TRUE) %>%
+  dfm()
+head(tweet_dfm)
+tag_dfm <- dfm_select(tweet_dfm, pattern = "#*")
+toptag <- names(topfeatures(tag_dfm, 50))
+head(toptag, 10)
+library("quanteda.textplots")
+```
+
+#### Network plot: tags
+
+```{r}
+tag_fcm <- fcm(tag_dfm)
+head(tag_fcm)
+topgat_fcm <- fcm_select(tag_fcm, pattern = toptag)
+textplot_network(topgat_fcm, min_freq = 50, edge_alpha = 0.8, edge_size = 5)
+```
+
+#### Network plot: Users
+
+```{r}
+user_dfm <- dfm_select(tweet_dfm, pattern = "@*")
+topuser <- names(topfeatures(user_dfm, 50))
+head(topuser, 20)
+user_fcm <- fcm(user_dfm)
+head(user_fcm, 20)
+user_fcm <- fcm_select(user_fcm, pattern = topuser)
+textplot_network(user_fcm, min_freq = 20, edge_color = "firebrick", edge_alpha = 0.8, edge_size = 5)
+```
+
+#### Wordcloud based on US presidential inaugural address texts, and metadata (for the corpus), from 1789 to present.
+
+```{r}
+dfm_inaug <- corpus_subset(data_corpus_inaugural, Year <= 1826) %>% 
+  tokens(remove_punct = TRUE) %>% 
+  tokens_remove(stopwords("english")) %>% 
+  dfm() %>% 
+  dfm_trim(min_termfreq = 10, verbose = FALSE)
+```
+
+```{r}
+set.seed(100)
+textplot_wordcloud(dfm_inaug)
+```
+
+```{r}
+corpus_subset(data_corpus_inaugural, 
+              President %in% c("Biden","Trump", "Obama", "Bush")) %>%
+  tokens(remove_punct = TRUE) %>%
+  tokens_remove(stopwords("english")) %>%
+  dfm() %>%
+  dfm_group(groups = President) %>%
+  dfm_trim(min_termfreq = 5, verbose = FALSE) %>%
+  textplot_wordcloud(comparison = TRUE)
+```
+
+```{r}
+textplot_wordcloud(dfm_inaug, min_count = 10,
+                   color = c('red', 'pink', 'green', 'purple', 'orange', 'blue'))
+```
+
+#### Locate keywords-in-context
+
+```{r}
+data_corpus_inaugural_subset <- 
+  corpus_subset(data_corpus_inaugural, Year > 1949)
+kwic(tokens(data_corpus_inaugural_subset), pattern = "american") %>%
+  textplot_xray()
+kwic(tokens(data_corpus_inaugural_subset), pattern = "trade") %>%
+  textplot_xray()
+```
+
+```{r}
+tokens_inaugural <- tokens(data_corpus_inaugural_subset)
+textplot_xray(
+  kwic(tokens_inaugural, pattern = "american"),
+  kwic(tokens_inaugural, pattern = "people"),
+  kwic(tokens_inaugural, pattern = "trade")
+)
+```
+
+### Analyzing the results
+
+#### Twitter data on Biden-Xi summit
+
+-   The feature co-occurence matrix shows that #biden and #china appear together the most number of times at 443, followed by #xijinping and #china at 434 times. Other co-occurences also happen between #biden and #xijinping at 370 times, and between #joebiden ad #china at 339 times. Tags, such as #breaking and #breakingnews, have only single digit co-occurences with other tags.
+-   It should be noted that some tags are functionally similar as in the case of #joebiden and #biden, and #xijinping and #xi.
+-   When looking at the textplot, we can see that some of the most frequently used tags are #coronavirus, #americans, #joebiden, #fentanyl, #china and #xijinping. The result here makes sense because issues like the fentanyl crisis and the COVID-19 pandemic were very much prevalent during the time of the summit in 2021. The tags #humanrights, #uyghurs and #uyghurgenocide also pop up but less frequently.
+-   In terms of users, we can see that among the most frequent posters are @nba, @capitalonearena, @eneskanter and @pelicansnba—in which these users are clustered together. The next biggest cluster is @politico, @whnsc, @anderscorr, @nahaltoosi and @phelimkine.
+
+#### US presidential inaugural speeches (1789-present)
+
+-   The wordcloud generated based on all the US presidential inaugural address tests shows that the word 'government' is the most prevalent, followed by words like 'people,' 'great,' 'states,' 'public,' and 'every.' Other frequently used words include 'war,' 'peace,' 'nation,' and 'union.'
+-   When comparing the words used by the past four presidents, Biden, Trump, Obama and Bush, we can see that they all use the word 'america' the most. Bush mostly said 'freedom' and 'liberty.' Obama used words, like 'must' and 'journey' although none appear distinguishably large relatively compared to other words he said. Biden's speech focuses on 'democracy,' 'US,' 'story' and 'can.' Trump's is almost the opposite of Obama's in that many of those words shown are big—among them are 'American,' 'country,' 'protected,' 'wealth' and 'great.'
+-   The lexical dispesion plot for the keywords 'american,' 'people,' and 'trade' shows that these three words are used mostly in speeches by Eisenhower, Johnson, Nixon, Carer, Reagan, Bush, Clinton, Kennedy, Obama, Trump and Biden. However, only Eisenhower, Bush, Clinton and Trump mention about 'trade.' All the presidents frequently mentioned 'people,' except for Kennedy who has only one mention of it towards the end of his speech. In fact, Kennedy did not even mention the other two keywords. Overall, it appears that these words occur fairly evenly across the aforementioned presidents' speeches regardless of their political affiliations.
+
+### What is Wordfish?
+
+Wordfish refers to a method that is used to identify texts based on their political leanings by looking at word frequencies.
+
+### Comparing positions (wordfish vs. scaling methods)
+
+Wordfish focuses mostly on the left versus right political spectrum, while scaling methods can be used to analyze a wider range of political and socio-economic positions. In other words, scaling methods are used to capture more complex relationships, but can make interpretation harder as they may identify nuances that are not easily discernible.
+
+### Creating a corpus using government documents selected from the govinfo.gov website
+
+The codes are provided [here](KM_assignment4_govtdata.qmd).
