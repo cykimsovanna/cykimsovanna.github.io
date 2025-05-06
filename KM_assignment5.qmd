@@ -1,0 +1,241 @@
+---
+title: "Knowledge Mining Assignment 5"
+format: html
+---
+
+04/08/2025
+
+### NLP for Text Classification and Prediction
+
+#### Running nlp_01.R
+```{r}
+library(tidyverse)
+library(tidymodels)
+library(stopwords)
+library(textrecipes)
+library(workflows)
+```
+
+```{r}
+# Data Ingestion and Preparation
+# Read the CSV file
+data <- read_csv("https://raw.githubusercontent.com/datageneration/knowledgemining/refs/heads/master/data/km_sample_corpus.csv")
+# Inspect the first few rows
+head(data)
+data <- data %>%
+  mutate(label = factor(label)) # For classification
+set.seed(123)  # For reproducibility
+```
+
+```{r}
+# Preparing training and test data
+split <- initial_split(data, prop = 0.8, strata = label)
+train_data <- training(split)
+test_data  <- testing(split)
+```
+
+```{r}
+# Text preprocessing
+rec <- recipe(label ~ text, data = train_data) %>%
+  step_tokenize(text) %>%                      # Tokenize the text
+  step_stopwords(text) %>%                     # Remove stopwords
+  step_tokenfilter(text, max_tokens = 100) %>% # Keep top 100 tokens
+  step_tfidf(text)                             # Convert to TF-IDF
+```
+
+```{r}
+# Model Specification and Training
+rf_spec <- rand_forest(trees = 100) %>% # More trees can lead to a more stable model
+  set_engine("ranger") %>% # ranger is a fast implementation of random forests
+  set_mode("classification") # Good for high-dimensional feature space (e.g., TF-IDF vectors)
+```
+
+```{r}
+# Preparing workflow combining preprocessing recipe and model specification.
+wf <- workflow() %>%
+  add_recipe(rec) %>%
+  add_model(rf_spec)
+```
+
+```{r}
+# Model Evaluation and Prediction
+# Train the model on the training set
+rf_fit <- wf %>%
+  workflows::fit(data = train_data)
+
+rf_preds <- predict(rf_fit, new_data = test_data) %>%
+  bind_cols(test_data)
+
+# Evaluate performance
+metrics(rf_preds, truth = label, estimate = .pred_class)
+
+# Confusion matrix
+conf_mat(rf_preds, truth = label, estimate = .pred_class)
+```
+
+```{r}
+# Scale the workflow
+# Try on bigger dataset (200 cases)
+
+data200 <- read_csv("https://raw.githubusercontent.com/datageneration/knowledgemining/refs/heads/master/data/km_sample_corpus_200.csv")
+data <- data200 %>%
+  mutate(label = factor(label))
+set.seed(123)  # For reproducibility
+split <- initial_split(data, prop = 0.8, strata = label)
+train_data <- training(split)
+test_data  <- testing(split)
+```
+
+```{r}
+rec <- recipe(label ~ text, data = train_data) %>%
+  step_tokenize(text) %>%                      # Tokenize the text
+  step_stopwords(text) %>%                    # Remove stopwords
+  step_tokenfilter(text, max_tokens = 100) %>% # Keep top 100 tokens
+  step_tfidf(text)                             # Convert to TF-IDF
+
+rf_spec <- rand_forest(trees = 100) %>%
+  set_engine("ranger") %>%
+  set_mode("classification")
+
+wf <- workflow() %>%
+  add_recipe(rec) %>%
+  add_model(rf_spec)
+```
+
+```{r}
+# Train the model on the training set
+rf_fit <- wf %>%
+  workflows::fit(data = train_data)
+
+rf_preds <- predict(rf_fit, new_data = test_data) %>%
+  bind_cols(test_data)
+```
+
+```{r}
+# Evaluate performance
+metrics(rf_preds, truth = label, estimate = .pred_class)
+
+# Confusion matrix
+conf_mat(rf_preds, truth = label, estimate = .pred_class)
+```
+
+#### Running nlp_02.R
+```{r}
+required_packages <- c("tidyverse", "tidymodels", "textrecipes", "ranger", "workflows")
+new_packages <- required_packages[!(required_packages %in% installed.packages()[,"Package"])]
+if(length(new_packages)) install.packages(new_packages)
+
+# Load libraries
+library(tidyverse)
+library(tidymodels)
+library(textrecipes)
+library(workflows)
+```
+
+```{r}
+# 1. Data Ingestion and Preparation
+data200 <- read_csv("https://raw.githubusercontent.com/datageneration/knowledgemining/refs/heads/master/data/km_sample_corpus_200.csv")
+data200 <- data200 %>% mutate(label = factor(label))
+
+set.seed(123)  # For reproducibility
+split <- initial_split(data200, prop = 0.7, strata = label)
+train_data <- training(split)
+test_data  <- testing(split)
+```
+
+```{r}
+# 2. Define a Preprocessing Recipe
+rec <- recipe(label ~ text, data = train_data) %>%
+  step_tokenize(text) %>%                      # Tokenize the text
+  step_stopwords(text) %>%                     # Remove stopwords
+  step_tokenfilter(text, max_tokens = 100) %>%   # Keep top 100 tokens
+  step_tfidf(text)                             # Convert tokens to TF-IDF features
+```
+
+```{r}
+# 3. Specify a Random Forest Model with Tunable Hyperparameters
+# We'll tune mtry (number of predictors sampled for splitting)
+# and min_n (minimum number of observations in a node).
+rf_spec <- rand_forest(
+  trees = 100,      # We'll keep trees fixed for this tuning example
+  mtry = tune(),    # Number of predictors to sample at each split
+  min_n = tune()    # Minimum number of data points in a node
+) %>%
+  set_engine("ranger") %>%
+  set_mode("classification")
+```
+
+```{r}
+# 4. Create a Workflow Combining the Recipe and the Model Specification
+wf <- workflow() %>%
+  add_recipe(rec) %>%
+  add_model(rf_spec)
+```
+
+```{r}
+# 5. Set Up Cross-Validation
+set.seed(123)
+cv_folds <- vfold_cv(train_data, v = 5, strata = label)
+```
+
+```{r}
+# 6. Define a Grid for Hyperparameter Tuning
+# Here, we specify a grid for mtry and min_n.
+rf_grid <- grid_regular(
+  mtry(range = c(5, 20)),
+  min_n(range = c(2, 10)),
+  levels = 5  # 5 levels for each hyperparameter
+)
+```
+
+```{r}
+# 7. Tune the Model Using Cross-Validation
+set.seed(123)
+tune_results <- tune_grid(
+  wf,
+  resamples = cv_folds,
+  grid = rf_grid,
+  metrics = metric_set(accuracy, kap)
+)
+
+# Collect the best parameters based on accuracy
+best_params <- select_best(tune_results, metric = "accuracy")
+print(best_params)
+```
+
+```{r}
+# 8. Finalize the Workflow with the Best Hyperparameters
+final_wf <- finalize_workflow(wf, best_params)
+
+# Fit the final model on the full training data
+final_fit <- final_wf %>% workflows::fit(data = train_data)
+```
+
+```{r}
+# 9. Evaluate the Final Model on the Test Set
+final_preds <- predict(final_fit, new_data = test_data) %>%
+  bind_cols(test_data)
+
+# Performance Metrics
+final_preds <- final_preds %>% mutate(label = as.factor(label))
+final_metrics <- metric_set(accuracy, kap)(final_preds, truth = label, estimate = .pred_class)
+
+print(final_metrics)
+
+# Confusion Matrix
+final_conf_mat <- conf_mat(final_preds, truth = label, estimate = .pred_class)
+print(final_conf_mat)
+```
+
+```{r}
+# 10. Predict on New Samples (Optional)
+new_samples <- tibble(
+  text = c("The international film festival showcased diverse movies.",
+           "Renewable energy projects are being launched globally.",
+           "Financial markets are showing unusual volatility today.")
+)
+new_preds <- predict(final_fit, new_data = new_samples)
+new_samples <- new_samples %>% bind_cols(new_preds)
+print(new_samples) # Note the misclassified cases
+```
+
