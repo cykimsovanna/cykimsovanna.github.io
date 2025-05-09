@@ -1,0 +1,44 @@
+---
+title: " "
+format:
+  html:
+    page-layout: full
+    toc: false
+    theme: flatly
+    css: styles.css
+    sidebar: false
+---
+
+```{=html}
+<style>
+  .top-right-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  .app-container {
+    width: 98vw;
+    margin-left: calc(-49vw + 50%);
+    position: relative;
+  }
+
+  .app-container iframe {
+    border: none;
+    width: 100%;
+    height: 1000px;
+    display: block;
+  }
+</style>
+
+<div class="app-container">
+  <a href="cambodia_fdi_project.html" class="top-right-link">⬅ Go Back</a>
+  <iframe 
+    src="https://cykimsovanna.shinyapps.io/cambodia_fdi_db/" 
+    allowfullscreen>
+  </iframe>
+</div>
+```
