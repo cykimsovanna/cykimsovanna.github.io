@@ -1,0 +1,51 @@
+---
+title: "University of Texas at Dallas"
+format: html
+---
+
+## M.S. Social Data Analytics & Research
+
+### EPPS 6323 - Knowledge Mining
+
+#### Assignments
+
+-   [Assignment 1 - 01/28/2025](KM_assignment1.qmd)
+-   [Assignment 2 - 02/11/2025](KM_assignment2.qmd)
+-   [Assignment 3 - 03/04/2025](KM_assignment3.qmd)
+-   [Assignment 4 - 03/25/2025](KM_assignment4.qmd)
+-   [Assignment 5 - 04/08/2025](KM_assignment5.qmd)
+-   [Class 4 Discussion - 02/25/2025](KM4_MiningScientificPapers.pdf)
+
+#### Project
+
+-   [Knowledge Mining Project Proposal - 02/25/2025](KMProjectProposal_PPT.pdf)
+-   [Knowledge Mining Project Progress Report - 04/22/2025](KMProjectProgress1_PPT.pdf)
+-   [H1B Trends in US Financial Sector (Final Presentation) - 05/06/2025](KM_h1b_showcase.pdf)
+-   [Using Knowledge Mining to Analyze H-1B Visa Sponsorship Trends in the U.S. Financial Sector from 2016 to 2024 (Final Paper) - 05/12/2025](Kimsovanna_H1B_FinalPaper.pdf)
+-   Here are the R files used in this knowledge mining project: [h1b_finance_filtering.R](h1b_finance_filtering.R), [h1b_finance_textclustering.R](h1b_finance_textclustering.R) and [h1b_finance_visuals.R](h1b_finance_visuals.R).
+
+### EPPS 6354 - Information Management
+
+#### Assignments
+
+-   [Assignment 1 - 02/06/2025](IM_assignment1.qmd)
+-   [Assignment 2 - 02/13/2025](IM_assignment2.qmd)
+-   [Assignment 3 - 02/20/2025](IM_assignment3.qmd)
+-   [Assignment 4 - 02/27/2025](IM_assignment4.qmd)
+-   [Assignment 5 - 03/06/2025](IM_assignment5.qmd)
+-   [Assignment 6 - 03/13/2025](IM_assignment6.qmd)
+-   [Assignment 7 - 04/17/2025](IM_assignment7.qmd)
+
+#### Project
+
+-   [Database Project Proposal - 02/20/2025](IMProjectProposal_PPT.pdf)
+-   [Database Project Progress Report - 04/10/2025](IMProjectProgress1.pdf)
+-   [Foreign Direct Investments & Trade in Cambodia (Final Presentation) - 05/01/2025](cambodia_fdi_project.html)
+-   [Designing a Database for Cambodia's FDI and Trade (Final Paper) - 05/07/2025](Kimsovanna_KHFDI_FinalPaper.pdf)
+-   Here are the necessary files used to create this database application: [khm_fdi.R](khm_fdi.R), [geoBoundaries-KHM-ADM1_simplified.geojson](geoBoundaries-KHM-ADM1_simplified.geojson), [khm_fdi.sqlite](khm_fdi.sqlite).
+
+
+### EPPS 6302 - Methods of Data Collection and Production
+
+#### Assignments
+-   [Assignment 1 - 09/09/2025](MD_assignment1.qmd)
