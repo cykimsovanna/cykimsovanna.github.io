@@ -1,0 +1,27 @@
+---
+title: "Designing a Database for Cambodia’s Foreign Direct Investment and Trade Analysis"
+author: "Chakrayuddh Kimsovanna"
+
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    fontsize: 12pt
+    linestretch: 2
+    papersize: letter
+    geometry: margin=1in
+    fontfamily: times
+    mainfont: "Times New Roman"
+
+csl: apsa.csl
+execute:
+  echo: false
+---
+
+EPPS 6354 - Information Management 
+Dr. Karl Ho  
+University of Texas at Dallas
+May 5, 2025
+
+\newpage
+

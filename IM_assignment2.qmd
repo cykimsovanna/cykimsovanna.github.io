@@ -1,0 +1,33 @@
+---
+title: "Information Management Assignment 2"
+format: html
+---
+
+02/13/2025
+
+### 1. Explaining Key Terms:
+
+-   A *relation schema* is a logical structure or blueprint of a database that includes definitions for the all the relations within it, such as names, primary and foreign keys, constraints, and domains. For example, within the UTD database, "student" and "course" could be considered as relation schemas:
+
+    -   `student (studentID, degree, graduation year, school)`
+    -   `course (courseID, coursename, department, credits, class level)`
+
+-   A *relation* is simply the table within a database that consists of tuples and attributes. It is unordered but its structure is defined by the relation schema. For example, a relation could be:
+
+    | CourseID  | Course Name                                | Department |
+    |-----------|--------------------------------------------|------------|
+    | EPPS 6323 | Knowledge Mining                           | EPPS       |
+    | EPPS 6354 | Information Management                     | EPPS       |
+    | ECON 6357 | Monetary Economics & International Banking | EPPS       |
+
+-   An *instance* is a snapshot of the actual data in the database at a specific point in time. An example of this would just be the exact same thing as shown in the table above, except that it is time-specific, which in this case would be from the Spring 2025 semester. An instance from the previous Fall 2024 semester would have different classes available.
+
+### 2. Schema Diagram for Bank Database
+
+![](images/IM2.drawio-02.png)
+
+### 3. Identifying Primary and Foreign Keys
+
+-   Assuming that branch names and customer names are unique, but loans and accounts can be associated with more than one customer, the appropriate primary keys are underlined in the diagram above, which include `ID` and `customer_name` in "customer," `ID` in "borrower," `loan_number` in "loan," `branch_name` in "branch," `account_number` in "account," and `ID` in "depositor."
+
+-   The appropriate foreign keys are `ID` and `loan_number` in "borrower," `branch_name` in "loan," `branch_name` in "account," and `ID` and `account_number` in "depositor."
